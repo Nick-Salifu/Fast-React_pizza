@@ -56,8 +56,9 @@ function CreateOrder() {
           <label className="sm:basis-40">Phone number</label>
           <div className="grow">
             <input type="tel" name="phone" required className="w-full input" />
+          
+          {formErrors?.phone && <p className="p-2 mt-2 text-xs text-red-700 bg-red-100 rounded-md">{formErrors.phone}</p>}
           </div>
-          {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
 
         <div className="flex flex-col gap-2 mb-5 sm:items-center sm:flex-row">
@@ -67,7 +68,7 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div>
+        <div className='flex items-center gap-5 mb-12'>
           <input
             type="checkbox"
             name="priority"
@@ -76,7 +77,7 @@ function CreateOrder() {
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
-          <label htmlFor="priority">Want to yo give your order priority?</label>
+          <label htmlFor="priority" className="font-medium">Want to yo give your order priority?</label>
         </div>
 
         <div>
